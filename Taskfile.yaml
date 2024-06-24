@@ -1,0 +1,9 @@
+version: 3
+
+tasks:
+  layer:build:
+    desc: "Builds the layer"
+    cmds:
+      - docker build -t openssl-layer .
+      - docker run --rm -v ${PWD}/layer:/layer openssl-layer
+
